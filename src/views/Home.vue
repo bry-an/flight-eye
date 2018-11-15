@@ -1,13 +1,13 @@
 <template>
-  <HelloWorld />
+<AirportInput />
 </template>
 
 <script>
-  import HelloWorld from '../components/HelloWorld'
+import AirportInput from "../components/AirportInput";
 
-  export default {
-    components: {
-      HelloWorld
-    }
+export default {
+  components: {
+    AirportInput
   }
+};
 </script>
