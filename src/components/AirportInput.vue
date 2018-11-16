@@ -10,8 +10,8 @@
             >Search
         </v-btn>
     </v-form>
-<v-list v-if='apiResponse' >
-
+<v-list v-for='airplane in flightData' :key='airplane.icao24'>
+  {{airplane.callsign}}
 </v-list>
 </div>
 
@@ -35,7 +35,6 @@ export default {
         .then(x => x.json())
         .then(x => (this.flightData = x));
 
-      this.apiResponse = true;
     }
   }
 };
