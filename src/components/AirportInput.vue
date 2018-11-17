@@ -30,8 +30,6 @@ export default {
   data() {
     return {
       airport: "",
-      apiResponse: false,
-      flightData: [],
       airportRules: [
         v => !!v || "An airport code is required",
         v => v.length === 4 || "Please provide a 4-letter ICAO airport code."
@@ -40,16 +38,15 @@ export default {
   },
   methods: {
     getFlightInfo(airportCode) {
-      if (this.$refs.form.validate()) {
-        fetch(
-          `https://opensky-network.org/api/flights/arrival?airport=${airportCode}&begin=1542229237&end=1542283237`
-        )
-          .then(x => x.json())
-          .then(x => (this.flightData = x));
-      }
-      this.$emit('log-it(hithere)')
+      this.$store.dispatch('getFlightData', airportCode)
+    }
+  },
+  computed: {
+    flightData () {
+    return this.$store.state.flightData
     }
   }
+
 };
 </script>
 <style lang="sass">
