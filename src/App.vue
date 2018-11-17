@@ -21,10 +21,14 @@
         </v-list-tile>
         <v-list-tile>
           <v-list-tile-action>
-            <v-icon>settings</v-icon>
+            <v-icon>airport_shuttle</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Settings</v-list-tile-title>
+              <router-link to='/numbers'>
+            <v-list-tile-title>
+              Numbers
+            </v-list-tile-title>
+              </router-link>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -59,9 +63,8 @@ export default {
   },
   methods: {
     logIt(message) {
-      console.log(message)
+      console.log(message);
     }
-
   }
 };
 </script>

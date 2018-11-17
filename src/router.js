@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 import AirportInput from './components/AirportInput'
+import Numbers from './components/Numbers'
 
 Vue.use(Router)
 
@@ -18,6 +19,11 @@ export default new Router({
       path: '/airportinput',
       name: 'AirportInput',
       component: AirportInput
+    },
+    {
+      path: '/numbers',
+      name: 'Numbers',
+      component: Numbers
     },
     {
       path: '/about',

@@ -6,13 +6,16 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     flightData: [],
+    randomNumber: ''
 
   },
   mutations: {
     setFlightData(state, payload) {
       state.flightData = payload
+    },
+    setRandomNumber(state, payload) {
+      state.randomNumber = payload;
     }
-
   },
   actions: {
     async getFlightData(context, payload) {
@@ -24,6 +27,12 @@ export default new Vuex.Store({
         .then(x => x.json())
         context.commit('setFlightData', response)
 
+    },
+  async randomNumberTrivia(context) {
+      const response = await fetch("http://numbersapi.com/11/19/date")
+      .then(x => x.text())
+      context.commit('setRandomNumber', response)
+      
     }
 
   }
