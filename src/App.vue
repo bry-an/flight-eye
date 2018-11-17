@@ -8,11 +8,15 @@
     >
       <v-list dense>
         <v-list-tile>
-          <v-list-tile-action>
+          <v-list-tile-action @click="logIt('loggit!')">
             <v-icon>airplanemode_active</v-icon>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title>Flight Monitoring</v-list-tile-title>
+            <v-list-tile-title>
+              <router-link to="/airportinput">
+              Flight Monitoring
+              </router-link> 
+              </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
         <v-list-tile>
@@ -32,7 +36,7 @@
     <v-content>
       <v-container fluid fill-height>
         <v-layout justify-center align-center>
-          <AirportInput />
+          <router-view />
           
           <v-flex shrink>
           </v-flex>
@@ -46,7 +50,6 @@
 </template>
 
 <script>
-import AirportInput from "./components/AirportInput";
 export default {
   data: () => ({
     drawer: null
@@ -54,7 +57,6 @@ export default {
   props: {
     source: String
   },
-  components: { AirportInput },
   methods: {
     logIt(message) {
       console.log(message)
