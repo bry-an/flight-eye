@@ -13,9 +13,7 @@
             @click.prevent='getFlightInfo(airport)'
             >Search
         </v-btn>
-        <v-btn
-          @click.prevent="$emit(logIt('hi there'))">Hi
-        </v-btn>
+        <LogIt v-on:loggit='loggit'/>
     </v-form>
 <v-list v-for='airplane in flightData' :key='airplane.firstseen'>
   <p>{{airplane.callsign}} departed from {{airplane.estDepartureAirport}}, first seen at {{airplane.firstseen}} and last seen at {{airplane.lastseen}}</p>
@@ -25,6 +23,7 @@
 </template>
 
 <script>
+import LogIt from './LogIt'
 export default {
   name: "AirportInput",
   data() {
@@ -38,14 +37,23 @@ export default {
   },
   methods: {
     getFlightInfo(airportCode) {
-      this.$store.dispatch('getFlightData', airportCode)
+      this.$store.dispatch('getFlightData', airportCode);
+      this.$emit('log-it', 'aloha!')
+    }, 
+    loggit (message, number) {
+      console.log(message)
+      console.log(3 * number)
     }
   },
   computed: {
     flightData () {
     return this.$store.state.flightData
     }
+  }, 
+  components: {
+    LogIt
   }
+
 
 };
 </script>
