@@ -15,7 +15,7 @@
         </v-btn>
     </v-form>
 <v-list v-for='airplane in flightData' :key='airplane.firstseen'>
-  {{airplane.callsign}}
+  <p>{{airplane.callsign}} departed from {{airplane.estDepartureAirport}}, first seen at {{airplane.firstseen}} and last seen at {{airplane.lastseen}}</p>
 </v-list>
 </div>
 
