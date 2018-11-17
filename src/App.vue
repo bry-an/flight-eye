@@ -54,6 +54,12 @@ export default {
   props: {
     source: String
   },
-  components: { AirportInput }
+  components: { AirportInput },
+  methods: {
+    logIt(message) {
+      console.log(message)
+    }
+
+  }
 };
 </script>
