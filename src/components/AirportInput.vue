@@ -10,14 +10,20 @@
         </v-text-field>
         <v-btn 
             color='info'
+            dark
             @click.prevent='getFlightInfo(airport)'
             >Search
         </v-btn>
         <LogIt v-on:loggit='loggit'/>
     </v-form>
-<v-list v-for='airplane in flightData' :key='airplane.firstseen'>
+    <v-layout row wrap justify-space-around>
+      
+<v-flex xs5 v-for='airplane in flightData' :key='airplane.firstseen'>
+  <v-card>
   <p>{{airplane.callsign}} departed from {{airplane.estDepartureAirport}}, first seen at {{airplane.firstseen}} and last seen at {{airplane.lastseen}}</p>
-</v-list>
+  </v-card>
+</v-flex>
+    </v-layout>
 </div>
 
 </template>
