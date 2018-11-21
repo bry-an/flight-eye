@@ -39,7 +39,8 @@
     </v-toolbar>
     <v-content>
       <v-container fluid fill-height>
-        <v-layout justify-center column align-center>
+        <v-layout justify-center align-space-around column align-center>
+
           <router-view />
           
           <v-flex shrink>

@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import AirportInput from './components/AirportInput'
 import Numbers from './components/Numbers'
+import Stepper from './components/Stepper'
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/numbers',
       name: 'Numbers',
       component: Numbers
+    },
+    {
+      path: '/stepper',
+      name: 'stepper',
+      component: Stepper
     },
     {
       path: '/about',
