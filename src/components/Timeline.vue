@@ -36,7 +36,7 @@ export default {
   },
   computed: {
     names() {
-      return employeeStatus.map(item => item.name);
+      return employeeStatus.map(({ name }) => name);
     }
   }
 };
