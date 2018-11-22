@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import AirportInput from './components/AirportInput'
 import Numbers from './components/Numbers'
 import Stepper from './components/Stepper'
+import Timeline from './components/Timeline'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/stepper',
       name: 'stepper',
       component: Stepper
+    },
+    {
+      path: '/timeline',
+      name: 'timeline',
+      component: Timeline
     },
     {
       path: '/about',

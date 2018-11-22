@@ -43,8 +43,6 @@
 
           <router-view />
           
-          <v-flex shrink>
-          </v-flex>
         </v-layout>
       </v-container>
     </v-content>
