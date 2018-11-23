@@ -1,7 +1,8 @@
 <template>
 <div>
 <v-autocomplete
-  data = 'names' >
+  v-model='autocomplete'
+  :items= 'names'>
 </v-autocomplete>
   <v-timeline
     >
@@ -21,6 +22,10 @@
       </v-card>
     </v-timeline-item>
   </v-timeline>
+  <v-btn
+    @click="log" >
+    names! 
+  </v-btn>
 </div>
 </template>
 <script>
@@ -31,13 +36,15 @@ export default {
   data() {
     return {
       portfolioItems,
-      employeeStatus
+      employeeStatus,
+      autocomplete: null
     };
   },
   computed: {
     names() {
-      return employeeStatus.map(({ name }) => name);
+      return employeeStatus.map(item => item.name);
     }
-  }
+  },
+  methods: {}
 };
 </script>
