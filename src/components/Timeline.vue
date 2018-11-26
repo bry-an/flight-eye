@@ -11,11 +11,10 @@
       :key="employee.name"
       color="blue lighten-2"
       fill-dot
-      large
     >
       <span slot="opposite">{{employee.provisioned}}</span>
       <v-card class="elevation-2">
-        <v-card-title class="purple lighten-2"><h2>{{employee.hireConfirmed}}</h2></v-card-title>
+        <v-card-title class="red lighten-2"><h2>{{employee.hireConfirmed}}</h2></v-card-title>
         <v-card-text>
           {{employee.name}}
         </v-card-text>
@@ -31,7 +30,7 @@ export default {
   name: "Timeline",
   data() {
     return {
-      portfolioItems,
+      portfolioItems, 
       employeeStatus,
       autocomplete: null
     };

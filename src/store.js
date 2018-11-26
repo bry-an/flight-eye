@@ -29,10 +29,9 @@ export default new Vuex.Store({
 
     },
   async randomNumberTrivia(context, payload) {
-      const response = await fetch(`http://numbersapi.com/${payload}`)
-        .then(x => x.text())
+      const response = await fetch(`http://numbersapi.com/${payload}`) 
+        .then(x => x.text()) 
       context.commit('setRandomNumber', response)
-      
     }
 
   }
