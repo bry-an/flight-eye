@@ -7,25 +7,21 @@
   <v-timeline
     >
     <v-timeline-item
-      v-for="item in portfolioItems"
-      :key="item.name"
+      v-for="employee in employeeStatus"
+      :key="employee.name"
       color="blue lighten-2"
       fill-dot
       large
     >
-      <span slot="opposite">{{item.githubLink}}</span>
+      <span slot="opposite">{{employee.provisioned}}</span>
       <v-card class="elevation-2">
-        <v-card-title class="purple lighten-2"><h2>{{item.name}}</h2></v-card-title>
+        <v-card-title class="purple lighten-2"><h2>{{employee.hireConfirmed}}</h2></v-card-title>
         <v-card-text>
-          {{item.problem}}
+          {{employee.name}}
         </v-card-text>
       </v-card>
     </v-timeline-item>
   </v-timeline>
-  <v-btn
-    @click="log" >
-    names! 
-  </v-btn>
 </div>
 </template>
 <script>
