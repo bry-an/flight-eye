@@ -12,7 +12,7 @@
       color="blue lighten-2"
       fill-dot
     >
-      <span slot="opposite">{{employee.provisioned}}</span>
+      <span slot="opposite">{{employee.hardwareSelected}}</span>
       <v-card class="elevation-2">
         <v-card-title class="red lighten-2"><h2>{{employee.hireConfirmed}}</h2></v-card-title>
         <v-card-text>
